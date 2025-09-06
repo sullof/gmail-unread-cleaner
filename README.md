@@ -26,11 +26,14 @@ A Chrome extension that helps you clean up unread messages in Gmail folders olde
    - Choose "Chrome extension" as the application type
    - Enter your extension ID (you'll get this after loading the extension)
    - Download the credentials JSON file
+   - **Note:** You don't need to use the JSON file directly. Just copy the "Client ID" value from it.
 
 ### 2. Configure the Extension
 
 1. Update `manifest.json`:
-   - Replace `YOUR_CLIENT_ID.apps.googleusercontent.com` with your actual client ID from the Google Cloud Console
+   - Open the downloaded credentials JSON file
+   - Copy the "client_id" value (looks like: `123456789-abcdefghijklmnop.apps.googleusercontent.com`)
+   - Replace `YOUR_CLIENT_ID.apps.googleusercontent.com` in `manifest.json` with your actual client ID
 
 ### 3. Install the Extension
 
