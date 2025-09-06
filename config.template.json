@@ -1,0 +1,26 @@
+{
+  "oauth2": {
+    "client_id": "YOUR_CLIENT_ID.apps.googleusercontent.com"
+  },
+  "instructions": {
+    "step1": "Go to Google Cloud Console (https://console.cloud.google.com/)",
+    "step2": "Create a new project or select existing one",
+    "step3": "Enable Gmail API in APIs & Services > Library",
+    "step4": "Create OAuth2 credentials in APIs & Services > Credentials",
+    "step5": "Choose 'Chrome extension' as application type",
+    "step6": "Load this extension in Chrome to get Extension ID",
+    "step7": "Add Extension ID to authorized origins in OAuth client",
+    "step8": "Copy client_id from credentials and update manifest.json"
+  },
+  "scopes": [
+    "https://www.googleapis.com/auth/gmail.readonly",
+    "https://www.googleapis.com/auth/gmail.modify"
+  ],
+  "features": {
+    "preview_mode": true,
+    "batch_deletion": true,
+    "folder_selection": true,
+    "date_filtering": true,
+    "confirmation_dialogs": true
+  }
+}

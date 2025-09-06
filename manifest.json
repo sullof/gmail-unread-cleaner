@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "Gmail Unread Cleaner",
+  "version": "1.0.0",
+  "description": "Clean up unread messages in Gmail folders older than a specified date",
+  "permissions": [
+    "storage",
+    "identity",
+    "https://www.googleapis.com/*",
+    "https://gmail.googleapis.com/*"
+  ],
+  "host_permissions": [
+    "https://mail.google.com/*"
+  ],
+  "oauth2": {
+    "client_id": "YOUR_CLIENT_ID.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/gmail.readonly",
+      "https://www.googleapis.com/auth/gmail.modify"
+    ]
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Gmail Unread Cleaner"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

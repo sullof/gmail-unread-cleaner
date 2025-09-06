@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gmail Unread Cleaner</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Gmail Unread Cleaner</h1>
+            <p class="subtitle">Clean up old unread messages</p>
+        </header>
+
+        <div class="auth-section" id="authSection">
+            <button id="loginBtn" class="btn btn-primary">Connect to Gmail</button>
+        </div>
+
+        <div class="main-section" id="mainSection" style="display: none;">
+            <div class="form-group">
+                <label for="folderSelect">Select Folder/Label:</label>
+                <select id="folderSelect" class="form-control">
+                    <option value="">Loading folders...</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="dateInput">Delete messages older than:</label>
+                <input type="date" id="dateInput" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" id="previewMode" checked>
+                    Preview mode (don't actually delete)
+                </label>
+            </div>
+
+            <div class="action-buttons">
+                <button id="scanBtn" class="btn btn-secondary">Scan Messages</button>
+                <button id="deleteBtn" class="btn btn-danger" style="display: none;">Delete Messages</button>
+            </div>
+
+            <div class="results" id="results" style="display: none;">
+                <h3>Scan Results</h3>
+                <div id="messageCount" class="message-count"></div>
+                <div id="messageList" class="message-list"></div>
+            </div>
+
+            <div class="status" id="status"></div>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
